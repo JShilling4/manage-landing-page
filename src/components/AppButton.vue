@@ -56,7 +56,7 @@ export default {
     transition: background-color 0.3s, letter-spacing .3s;
     &.hovering {
         background-color: lighten($red-bright, 5%);
-        letter-spacing: 1.3px;
+        letter-spacing: 1.4px;
     }
 }
 </style>
