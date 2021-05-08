@@ -25,12 +25,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 15rem;
+    min-height: 18rem;
 
     nav {
         .nav-item {
             margin: 0 1.85rem;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: #333;
             transition: color 0.3s;
