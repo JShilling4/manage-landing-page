@@ -83,6 +83,9 @@ export default {
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
             text-align: center;
         }
+        @include breakpoint(mobile) {
+                top: 10rem;
+            }
         .nav-item {
             margin: 0 1.85rem;
             font-size: 1.5rem;
@@ -94,6 +97,9 @@ export default {
                 padding: 1.5rem 0;
                 font-weight: 600;
                 font-size: 2.3rem;
+            }
+            @include breakpoint(mobile) {
+                font-size: 1.8rem;
             }
             &:hover {
                 color: lighten(#333, 40%);
