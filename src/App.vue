@@ -1,6 +1,11 @@
 <template>
     <main>
-        <TheNavbar class="container" />
+        <TheNavbar
+            class="container"
+            :show-mobile-menu="showMobileMenu || windowWidth > 768"
+            @open="showMobileMenu = true"
+            @close="showMobileMenu = false"
+        />
 
         <section class="hero">
             <div class="overlay"></div>
@@ -270,6 +275,7 @@ export default {
                     snapAlign: "center",
                 },
             },
+            showMobileMenu: false,
         };
     },
     methods: {

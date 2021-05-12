@@ -6,7 +6,7 @@
         />
 
         <nav
-            v-if="mobileMenuShowing"
+            v-if="showMobileMenu"
             class="nav"
         >
             <a
@@ -32,16 +32,18 @@
         </nav>
 
         <img
-            v-if="mobileMenuShowing"
+            v-if="showMobileMenu"
             src="@/assets/images/icon-close.svg"
             alt="close mobile menu icon"
-            @click="mobileMenuShowing = false"
+            @click="$emit('close')"
+            class="mobileClose"
         >
         <img
             v-else
             src="@/assets/images/icon-hamburger.svg"
             alt="mobile menu icon"
-            @click="mobileMenuShowing = true"
+            @click="$emit('open')"
+            class="hamburger"
         >
 
         <AppButton>Get Started</AppButton>
@@ -51,10 +53,10 @@
 <script>
 export default {
     name: "TheNavbar",
-    data() {
-        return {
-            mobileMenuShowing: false,
-        };
+    props: {
+        showMobileMenu: {
+            type: Boolean,
+        },
     },
 };
 </script>
@@ -84,8 +86,8 @@ export default {
             text-align: center;
         }
         @include breakpoint(mobile) {
-                top: 10rem;
-            }
+            top: 10rem;
+        }
         .nav-item {
             margin: 0 1.85rem;
             font-size: 1.5rem;
@@ -108,6 +110,17 @@ export default {
     }
     button {
         @include breakpoint(laptop) {
+            display: none;
+        }
+    }
+    .hamburger {
+        display: none;
+        @include breakpoint(ipadPro) {
+            display: block;
+        }
+    }
+    .mobileClose {
+        @media screen and (min-width: 768px) {
             display: none;
         }
     }
